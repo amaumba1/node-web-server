@@ -9,18 +9,18 @@ hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engien', 'hbs');
 
 
-app.use((req, res ,next) => {
-    const now = new Date().toString();
-    const log = `${now}: ${req.method} ${req.url} ${req.ip}`
+// app.use((req, res ,next) => {
+//     const now = new Date().toString();
+//     const log = `${now}: ${req.method} ${req.url} ${req.ip}`
 
-    console.log(log);
-    fs.appendFile('server.log', log + '\n', (err) => {
-        if (err) {
-            console.log('Unable to append to server.log');
-        }
-    });
-    next();
-});
+//     console.log(log);
+//     fs.appendFile('server.log', log + '\n', (err) => {
+//         if (err) {
+//             console.log('Unable to append to server.log');
+//         }
+//     });
+//     next();
+// });
 
 // app.use((req, res, next) => {
 //     res.render('maintenance.hbs');
