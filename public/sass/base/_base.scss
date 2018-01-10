@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* 1 rem is equaal to 10px therefore we will divide the root html (10px) to all the px to get rem. 
+the default px for browser is 100% (16px) to get 10px please divide 10/16 = 0.625 which is 62.5%
+*/
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
