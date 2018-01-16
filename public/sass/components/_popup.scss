@@ -23,12 +23,29 @@
         transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
 
+        @include respond(tab-port) {
+            width: 100%;
+
+            @mixin absCenter {
+                position: relative;
+                top: 0%;
+                left: 0%;
+                transform: translate(0);
+            }
+
+        }
+
+
     }
 
     &__left {
         width: 33.333333%;
         //float: left     // help to keep side by side another option is to use table-cell
         display: table-cell;
+
+        @include respond(tab-port) {
+            width: 15.333333%;
+        }
     }
 
     &__right {
@@ -37,6 +54,11 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(tab-port) {
+            width: 30.6666667%;
+            padding: 2rem 3.5rem;
+        }
 
     }
 
