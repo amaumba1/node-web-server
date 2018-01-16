@@ -11,9 +11,33 @@ the default px for browser is 100% (16px) to get 10px please divide 10/16 = 0.62
 */
 
 html {
-    font-size: 62.5%;
+    // This defines what 1rem is 10px and when take 10px/16px we get 62.5%
+    font-size: 62.5%;  // this define the font-size of our entire layout
+
+    // @include respond(phone) {
+    //     font-size: 50%;        // we delete because it apply to tab-port both have 50%
+    // }
+
+    @include respond(tab-land) {  // width < 1200?
+        font-size: 56.25%;  // 1 rem = 9px, therefore 9/16 = 50.25%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%;   // 1 rem = 8px, therefore 8/16 = 50%
+    }
+    
+
+    @include respond(big-desktop) {
+        font-size: 75%;   // 1 rem = 12px, therefore 12/16 = 75.25%
+    }
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem; 
+
+    @include respond(tab-port) { 
+        padding: 0; 
+    }
+
 }
